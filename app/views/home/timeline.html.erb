@@ -1,0 +1,17 @@
+<div class="col-xs-3 container sidebar well well-sm">
+
+  <%= form_tag(tweet_path, method: "post") do %>
+    <%= text_field_tag :text, '', class: "form-control input-area" %>
+    <%= submit_tag("Tweet", class: "btn btn-primary") %>
+  <% end %>
+</div>
+<div class="col-xs-9 col-xs-offset-3">
+  <% @timeline.each do |tweet| %>
+    <div class="post-panel well well-sm">
+      <div class="post">
+        <%= tweet.text %><br />
+       <br></br>
+      </div>
+    </div>
+  <% end %>
+</div>
